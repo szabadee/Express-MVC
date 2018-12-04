@@ -50,9 +50,7 @@ clocks.put('/:id', (req, res) => {
 clocks.delete('/:id', (req, res) => {
   models.Clock.destroy(
     { where: { id: req.params.id} })
-    .then(clock => {
-      res.json(clock);
-  });
+    .then(res.redirect(`/clocks`));
 });
 
 module.exports = clocks;

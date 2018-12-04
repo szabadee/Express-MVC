@@ -12,15 +12,10 @@ videogames.get('/', (req, res) => {
 
 // show
 videogames.get('/:id', (req, res) => {
-  models.Videogame.findById(req.params.id)
-    .then(videogame => {
-      if (videogame) {
-        res.locals.videogame = videogame;
-        res.render('videogames/show.handlebars');
-      } else {
-        res.status(400).send('Invalid ID');
-      }
-    });
+  models.Videogame.findById(req.params.id).then(videogame => {
+    res.locals.videogame = videogame;
+    res.render('videogames/show.handlebars');
+  });
 });
 
 // edit
@@ -49,7 +44,7 @@ videogames.put('/:id', (req, res) => {
     models.Videogame.update(req.body,
       { where: { id: req.params.id } })
       .then(videogame => {
-        (videogame ? res.json(videogame) : res.status(400).send('This ID already exist'));
+        (videogame ? res.redirect(`/videogames/${req.params.id}`) : res.status(400).send('This ID already exist'));
       });
   } else {
     res.status(400).send('This ID not exist');

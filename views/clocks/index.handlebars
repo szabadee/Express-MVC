@@ -9,9 +9,13 @@
       <td>{{price}}</td>
       <td><a href="/clocks/{{id}}" class="btn btn-secondary">Show</a></td>
       <td><a href="/clocks/{{id}}/edit" class="btn btn-success">Edit</a></td>
-      <td><a href="/clocks/{{id}}?_method=DELETE" class="btn btn-danger">Delete</a></td>
+      <td>
+        <form method="POST" action="/clocks/{{id}}?_method=DELETE">
+        <input class="btn btn-danger" type="submit" value="Delete" />
+        </form>
+      </td>
     </tr>
     {{/each}}
   </tbody>
 </table>
-<a href="/clocks/7" class="btn btn-primary">New</a>
+<a href="/clocks" class="btn btn-primary">New</a>

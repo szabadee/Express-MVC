@@ -1,4 +1,4 @@
-<form>
+<form method="POST" action="/videogames/{{videogame.id}}?_method=PUT">
   <div class="form-group">
     <label for="distributor">Distrubutor</label>
     <input type="distributor" class="form-control" name="distributor" value="{{videogame.distributor}}" />  
@@ -11,4 +11,5 @@
     <label for="type">Type</label>
     <input type="type" class="form-control" name="type" value="{{videogame.type}}" />  
   </div>
+  <input type="submit" value="update" />
 </form>
