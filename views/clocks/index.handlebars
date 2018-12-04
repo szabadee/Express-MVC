@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <tbody>
+    {{#each clocks}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{manufacturer}}</td>
+      <td>{{model}}</td>
+      <td>{{type}}</td>
+      <td>{{price}}</td>
+      <td><a href="/clocks/{{id}}" class="btn btn-secondary">Show</a></td>
+      <td><a href="/clocks/{{id}}/edit" class="btn btn-success">Edit</a></td>
+      <td><a href="/clocks/{{id}}?_method=DELETE" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a href="/clocks/7" class="btn btn-primary">New</a>
