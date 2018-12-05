@@ -10,6 +10,11 @@ clocks.get('/', (req, res) => {
   });
 });
 
+// new
+clocks.get('/new', (req, res) => {
+    res.render('clocks/new.handlebars');
+});
+
 // show
 clocks.get('/:id', (req, res) => {
   models.Clock.findById(req.params.id).then(clock => {
@@ -33,11 +38,11 @@ clocks.post('/', (req, res) => {
     model: req.body.model,
     type: req.body.type,
     price: req.body.price})
-    .then(clocks => {
-      res.locals.clocks = clocks;
-      res.render('clocks/new.handlebars');
+    .then(clock => {
+      res.redirect(`/clocks`);
   });
 });
+
 
 // update
 clocks.put('/:id', (req, res) => {

@@ -1,18 +1,19 @@
-<form>
+<form method="POST" action="/clocks">
   <div class="form-group">
     <label for="manufacturer">Manufacturer</label>
-    <input type="manufacturer" class="form-control" name="manufacturer" value="{{clock.req.params.manufacturer}}" />  
+    <input type="manufacturer" class="form-control" name="manufacturer" value="{{clock.req.query.manufacturer}}" />  
   </div>
   <div class="form-group">
     <label for="model">Model</label>
-    <input type="model" class="form-control" name="model" value="{{clock.model}}" />  
+    <input type="model" class="form-control" name="model" value="{{clock.req.query.model}}" />  
   </div>
   <div class="form-group">
     <label for="type">Type</label>
-    <input type="type" class="form-control" name="type" value="{{clock.type}}" />  
+    <input type="type" class="form-control" name="type" value="{{clock.req.query.type}}" />  
   </div>
   <div class="form-group">
     <label for="price">Price</label>
-    <input type="price" class="form-control" name="price" value="{{clock.price}}" />  
+    <input type="price" class="form-control" name="price" value="{{clock.req.query.price}}" />  
   </div>
+  <input type="submit" value="create" />
 </form>
