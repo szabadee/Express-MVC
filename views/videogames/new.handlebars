@@ -1,14 +1,15 @@
-<form>
+<form method="POST" action="/videogames">
   <div class="form-group">
     <label for="distributor">Distributor</label>
-    <input type="distributor" class="form-control" name="distributor" value="{{clock.req.params.manufacturer}}" />  
+    <input type="distributor" class="form-control" name="distributor" value="{{clock.req.query.manufacturer}}" />  
   </div>
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="name" class="form-control" name="name" value="{{clock.model}}" />  
+    <input type="name" class="form-control" name="name" value="{{clock.req.query.model}}" />  
   </div>
   <div class="form-group">
     <label for="type">Type</label>
-    <input type="type" class="form-control" name="type" value="{{clock.type}}" />  
+    <input type="type" class="form-control" name="type" value="{{clock.req.query.type}}" />  
   </div>
+  <input type="submit" value="create" />
 </form>

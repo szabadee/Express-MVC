@@ -10,6 +10,11 @@ videogames.get('/', (req, res) => {
   });
 });
 
+// new
+videogames.get('/new', (req, res) => {
+  res.render('videogames/new.handlebars');
+});
+
 // show
 videogames.get('/:id', (req, res) => {
   models.Videogame.findById(req.params.id).then(videogame => {
@@ -34,7 +39,7 @@ videogames.post('/', (req, res) => {
     type: req.body.type
   })
   .then(videogames => {
-    res.json(videogames);
+    res.redirect(`/videogames`);
   });
 });
 
